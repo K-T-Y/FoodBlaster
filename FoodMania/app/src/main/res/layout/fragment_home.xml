@@ -59,7 +59,7 @@
                 android:layout_marginStart="152dp"
                 android:fontFamily="@font/lucida_sans_unicode"
                 android:gravity="right"
-                android:text="Food Mania"
+                android:text="Food Blaster"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 android:textStyle="bold"
