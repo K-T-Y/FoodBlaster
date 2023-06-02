@@ -74,6 +74,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/chat1"
         android:onClick="new_chat"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"

@@ -3,6 +3,15 @@ package com.example.foodmania.Api_Models;
 public class APIFriendReq {
 
     String f_name,l_name,designation,encodedImage;
+    int user_id;
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
 
     public String getF_name() {
         return f_name;
