@@ -133,4 +133,8 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("get_friend_requests.php")
     Call<List<APIFriendReq>> get_friend_req(@Field("user_id") int user_id);
+
+    @FormUrlEncoded
+    @POST("accept_friend.php")
+    Call<APIResponse> accept_friend_req(@Field("sender_id") int sender_id, @Field("receiver_id") int receiver_id);
 }

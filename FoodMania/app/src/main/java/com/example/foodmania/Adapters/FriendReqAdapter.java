@@ -8,14 +8,23 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.foodmania.Api_Models.APIGetOwnPosts;
+import com.example.foodmania.Api_Models.APIResponse;
+import com.example.foodmania.Api_Util.ApiClient;
+import com.example.foodmania.Api_Util.ApiInterface;
 import com.example.foodmania.R;
 import com.example.foodmania.UI_Models.FriendReqModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FriendReqAdapter extends RecyclerView.Adapter<FriendReqAdapter.viewHolder> {
 
@@ -48,6 +57,25 @@ public class FriendReqAdapter extends RecyclerView.Adapter<FriendReqAdapter.view
         holder.btn_accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int sender=Integer.parseInt(holder.txt_id.getText().toString());
+                int reciever=user_id;
+                System.out.println(sender+""+reciever);
+                Call<APIResponse> call = ApiClient.getApiClient().create(ApiInterface.class).accept_friend_req(sender,user_id);
+                call.enqueue(new Callback<APIResponse>() {
+                    @Override
+                    public void onResponse(Call<APIResponse> call, Response<APIResponse> response) {
+                        if(response.body().getResult()==1)
+                        {
+                            System.out.println(1);
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<APIResponse> call, Throwable t) {
+
+                    }
+                });
 
             }
         });

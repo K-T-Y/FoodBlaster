@@ -64,10 +64,10 @@ public class CollectionFragment extends Fragment {
                     String l_name = data.get(i).getL_name();
                     String encodedImage = data.get(i).getEncodedImage();
                     String designation = data.get(i).getDesignation();
-                    int user_id = data.get(i).getUser_id();
+                    int user_id2 = data.get(i).getUser_id();
                     byte[] imageInByte = Base64.decode(encodedImage, Base64.DEFAULT);
                     Bitmap decodedImage = BitmapFactory.decodeByteArray(imageInByte, 0, imageInByte.length);
-                    requestList.add(new FriendReqModel(decodedImage, f_name + " " + l_name, designation, user_id));
+                    requestList.add(new FriendReqModel(decodedImage, f_name + " " + l_name, designation, user_id2));
                     FriendReqAdapter friendReqAdapter = new FriendReqAdapter(requestList, getContext(),user_id);
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
                     friendreqRV.setLayoutManager(linearLayoutManager);
