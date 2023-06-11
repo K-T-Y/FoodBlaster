@@ -132,9 +132,11 @@ private void showdate(final EditText txt_dob)
             Toast.makeText(getApplicationContext(), "Please select your DOB", Toast.LENGTH_LONG).show();
         } else if (txt_description.getText().toString().equals("")) {
             Toast.makeText(getApplicationContext(), "Description Cannot Be Empty", Toast.LENGTH_LONG).show();
-        } else if (txt_address.getText().toString().equals("")) {
-            Toast.makeText(getApplicationContext(), "Location not selected", Toast.LENGTH_LONG).show();
-        } else if (bitmap == null) {
+        }
+//        else if (txt_address.getText().toString().equals("")) {
+//            Toast.makeText(getApplicationContext(), "Location not selected", Toast.LENGTH_LONG).show();
+//        }
+       else if (bitmap == null) {
             Toast.makeText(getApplicationContext(), "Please Select a Image ", Toast.LENGTH_LONG).show();
         } else {
            get_id();
